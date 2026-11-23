@@ -1,0 +1,242 @@
+{
+  "title": "图书馆电子资源的借阅拒绝归因与续订组合",
+  "source_note": "全部机构、事件、人员、规则和数值均为人工构造的本地合成资料。",
+  "contract": "馆号、课程号和匿名需求号由馆方分配。attempt.kind 是 ask、denied 或 opened，ended 是打开资源时给出的释放时刻，多个入口出现同一 demand 表示同一次阅读需求。occupancy 给联盟其他馆已经占用且不在本馆日志中的席位区间。窗口的 complete 为 0 表示日志不能证明失败。授权和教学周的起止均左闭右开，价格单位元。",
+  "tables": {
+    "catalogue": [
+      {
+        "entry": "e11",
+        "volume": "E1",
+        "collection": "Lit"
+      },
+      {
+        "entry": "e12",
+        "volume": "E1",
+        "collection": "All"
+      },
+      {
+        "entry": "e21",
+        "volume": "E2",
+        "collection": "Lit"
+      },
+      {
+        "entry": "e22",
+        "volume": "E2",
+        "collection": "Civic"
+      },
+      {
+        "entry": "e31",
+        "volume": "E3",
+        "collection": "All"
+      },
+      {
+        "entry": "e32",
+        "volume": "E3",
+        "collection": "Civic"
+      }
+    ],
+    "attempt": [
+      {
+        "event": "A1",
+        "demand": "D1",
+        "course": "C1",
+        "library": "North",
+        "entry": "e11",
+        "at": "2026-09-14T08:55Z",
+        "kind": "ask",
+        "detail": "~",
+        "ended": "~"
+      },
+      {
+        "event": "A2",
+        "demand": "D1",
+        "course": "C1",
+        "library": "North",
+        "entry": "e11",
+        "at": "2026-09-14T08:55Z",
+        "kind": "denied",
+        "detail": "seats",
+        "ended": "~"
+      },
+      {
+        "event": "A3",
+        "demand": "D1",
+        "course": "C1",
+        "library": "North",
+        "entry": "e12",
+        "at": "2026-09-14T08:58Z",
+        "kind": "opened",
+        "detail": "~",
+        "ended": "2026-09-14T09:26Z"
+      },
+      {
+        "event": "A4",
+        "demand": "D2",
+        "course": "C2",
+        "library": "South",
+        "entry": "e22",
+        "at": "2026-09-14T09:01Z",
+        "kind": "denied",
+        "detail": "auth",
+        "ended": "~"
+      },
+      {
+        "event": "A5",
+        "demand": "D3",
+        "course": "C1",
+        "library": "North",
+        "entry": "e21",
+        "at": "2026-09-14T09:05Z",
+        "kind": "denied",
+        "detail": "unknown",
+        "ended": "~"
+      },
+      {
+        "event": "A6",
+        "demand": "D4",
+        "course": "C2",
+        "library": "South",
+        "entry": "e32",
+        "at": "2026-09-14T09:10Z",
+        "kind": "denied",
+        "detail": "seats",
+        "ended": "~"
+      },
+      {
+        "event": "A7",
+        "demand": "D5",
+        "course": "C2",
+        "library": "South",
+        "entry": "e32",
+        "at": "2026-09-21T09:10Z",
+        "kind": "opened",
+        "detail": "~",
+        "ended": "2026-09-21T09:46Z"
+      }
+    ],
+    "integrity": [
+      {
+        "library": "North",
+        "from": "2026-09-14T08:30Z",
+        "to": "2026-09-14T09:04Z",
+        "complete": "1"
+      },
+      {
+        "library": "North",
+        "from": "2026-09-14T09:04Z",
+        "to": "2026-09-14T09:17Z",
+        "complete": "0"
+      },
+      {
+        "library": "South",
+        "from": "2026-09-14T08:30Z",
+        "to": "2026-09-14T10:00Z",
+        "complete": "1"
+      },
+      {
+        "library": "South",
+        "from": "2026-09-21T08:30Z",
+        "to": "2026-09-21T10:00Z",
+        "complete": "1"
+      }
+    ],
+    "license": [
+      {
+        "id": "L1",
+        "collection": "Lit",
+        "libraries": "North",
+        "seat_pool": "campus",
+        "capacity": "1",
+        "from": "2026-09-01",
+        "to": "2026-12-30",
+        "price": "2400",
+        "signed": "1"
+      },
+      {
+        "id": "L2",
+        "collection": "All",
+        "libraries": "North,South",
+        "seat_pool": "alliance",
+        "capacity": "2",
+        "from": "2026-09-01",
+        "to": "2026-12-30",
+        "price": "6400",
+        "signed": "0"
+      },
+      {
+        "id": "L3",
+        "collection": "Civic",
+        "libraries": "South",
+        "seat_pool": "alliance",
+        "capacity": "2",
+        "from": "2026-09-01",
+        "to": "2026-12-30",
+        "price": "3900",
+        "signed": "0"
+      },
+      {
+        "id": "L4",
+        "collection": "Civic",
+        "libraries": "South",
+        "seat_pool": "south",
+        "capacity": "1",
+        "from": "2026-09-01",
+        "to": "2026-12-30",
+        "price": "5100",
+        "signed": "0"
+      }
+    ],
+    "occupancy": [
+      {
+        "pool": "alliance",
+        "library": "Other",
+        "from": "2026-09-14T08:50Z",
+        "to": "2026-09-14T09:30Z",
+        "seats": "1",
+        "filed": "2026-09-14"
+      },
+      {
+        "pool": "alliance",
+        "library": "Other",
+        "from": "2026-09-14T09:04Z",
+        "to": "2026-09-14T09:24Z",
+        "seats": "1",
+        "filed": "2026-09-24"
+      }
+    ],
+    "courses": [
+      {
+        "course": "C1",
+        "dept": "Literature",
+        "volume": "E1",
+        "from": "2026-09-14",
+        "to": "2026-10-31",
+        "minimum_pct": "90"
+      },
+      {
+        "course": "C2",
+        "dept": "Civics",
+        "volume": "E3",
+        "from": "2026-09-14",
+        "to": "2026-10-31",
+        "minimum_pct": "85"
+      }
+    ],
+    "mix": [
+      {
+        "dept": "Literature",
+        "weight": "0.6"
+      },
+      {
+        "dept": "Civics",
+        "weight": "0.4"
+      }
+    ],
+    "budget": [
+      {
+        "quarter": "2026Q3",
+        "amount": "8500"
+      }
+    ]
+  }
+}
